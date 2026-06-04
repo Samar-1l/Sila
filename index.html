@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صلة | Sila</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <div class="logo-box">
+      <img src="logo.png" alt="شعار صلة">
+    </div>
+
+    <div class="brand-text">
+      <h3 data-ar="صلة" data-en="Sila">صلة</h3>
+      <span data-ar="البوابة الذكية لجامعة الإمام" data-en="Smart Imam University Portal">
+        البوابة الذكية لجامعة الإمام
+      </span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <button onclick="showPage('home')" class="nav-btn active" data-ar="الرئيسية" data-en="Home">الرئيسية</button>
+    <button onclick="location.href='map.html'" class="nav-btn" data-ar="الخريطة" data-en="Map">الخريطة</button>
+    <button onclick="showPage('suggestions')" class="nav-btn" data-ar="الاقتراحات" data-en="Suggestions">الاقتراحات</button>
+    <button onclick="showPage('reports')" class="nav-btn" data-ar="البلاغات" data-en="Reports">البلاغات</button>
+    <button onclick="location.href='dashboard.html'" class="nav-btn" data-ar="لوحة المؤشرات" data-en="Dashboard">لوحة المؤشرات</button>
+  </nav>
+
+  <button class="lang-btn" onclick="toggleLang()">🌐 العربية | English</button>
+</header>
+
+<main>
+
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="hero-content">
+      <span class="badge" data-ar="هاكاثون جامعة الإمام 2026" data-en="Imam University Hackathon 2026">هاكاثون جامعة الإمام 2026</span>
+
+      <h1 data-ar="اكتشف الجامعة، وكن شريكاً في تطوير بيئة أكثر جودة"
+          data-en="Explore the university and help build a better campus environment">
+        اكتشف الجامعة، وكن شريكاً في تطوير بيئة أكثر جودة
+      </h1>
+
+      <p data-ar="منصة ذكية تفاعلية لاستكشاف مرافق الجامعة والتفاعل معها، والمساهمة في تحسين البيئة الجامعية من خلال الاقتراحات والبلاغات المباشرة."
+         data-en="An interactive smart platform to explore university facilities, interact with campus services, and improve the university environment through suggestions and direct reports.">
+        منصة ذكية تفاعلية لاستكشاف مرافق الجامعة والتفاعل معها، والمساهمة في تحسين البيئة الجامعية من خلال الاقتراحات والبلاغات المباشرة.
+      </p>
+
+      <div class="hero-actions">
+        <button class="primary" onclick="location.href='map.html'" data-ar="استكشف الخريطة" data-en="Explore Map">استكشف الخريطة</button>
+        <button class="secondary" onclick="showPage('suggestions')" data-ar="قدّم اقتراحك" data-en="Submit Suggestion">قدّم اقتراحك</button>
+      </div>
+    </div>
+
+<div class="hero-map-card" onclick="location.href='map.html'">
+  <div class="home-map-preview">
+
+    
+
+    <div class="home-zone left-zone"></div>
+    <div class="home-zone right-zone"></div>
+
+    <div class="home-main-building">الرئيسي</div>
+
+    <div class="home-building hb-323">323</div>
+    <div class="home-building hb-324">324</div>
+    <div class="home-building hb-326">326</div>
+
+    <div class="home-building hb-321">321</div>
+    <div class="home-building hb-322">322</div>
+    <div class="home-building hb-325">325</div>
+
+    <div class="home-link line-1"></div>
+    <div class="home-link line-2"></div>
+
+  </div>
+
+  <p data-ar="اضغط على الخريطة لاستكشاف المرافق والخدمات"
+     data-en="Click the map to explore facilities and services">
+    اضغط على الخريطة لاستكشاف المرافق والخدمات
+  </p>
+</div>
+  </div>
+</section>
+
+<section id="suggestions" class="page">
+  <div class="form-page">
+    <div>
+      <span class="badge" data-ar="صوتك يصنع الأثر" data-en="Your voice matters">صوتك يصنع الأثر</span>
+      <h1 data-ar="مساهمتك تصنع الأثر" data-en="Your contribution creates impact">مساهمتك تصنع الأثر</h1>
+      <p data-ar="اقترح فكرة عامة تساعد في تحسين مرافق الجامعة، الخدمات، الأنشطة، أو جودة الحياة الجامعية."
+         data-en="Suggest an idea to improve university facilities, services, activities, or campus quality of life.">
+        اقترح فكرة عامة تساعد في تحسين مرافق الجامعة، الخدمات، الأنشطة، أو جودة الحياة الجامعية.
+      </p>
+    </div>
+
+    <form class="smart-form" id="suggestionForm">
+      <label data-ar="عنوان الاقتراح" data-en="Suggestion title">عنوان الاقتراح</label>
+      <input type="text" placeholder="مثال: إضافة جلسات مظللة قرب المكتبة" required />
+
+      <label data-ar="الوصف" data-en="Description">الوصف</label>
+      <textarea placeholder="اكتب تفاصيل الاقتراح..." required></textarea>
+
+      <label data-ar="الموقع المرتبط / اختياري" data-en="Related location / optional">الموقع المرتبط / اختياري</label>
+      <input type="text" placeholder="مثال: المكتبة المركزية" />
+
+      <button type="submit" class="primary" data-ar="إرسال الاقتراح" data-en="Submit Suggestion">إرسال الاقتراح</button>
+    </form>
+  </div>
+</section>
+
+<section id="reports" class="page">
+  <div class="form-page">
+    <div>
+      <span class="badge" data-ar="بلاغات وتحسين" data-en="Report & Improve">بلاغات وتحسين</span>
+      <h1 data-ar="شارك برأيك واصنع الفرق" data-en="Share your feedback and make a difference">شارك برأيك واصنع الفرق</h1>
+      <p data-ar="أرسل بلاغاً عن مشكلة في مرافق الجامعة ليتم التعامل معها وتحسين البيئة الجامعية."
+         data-en="Submit a report about a campus issue to improve the university environment.">
+        أرسل بلاغاً عن مشكلة في مرافق الجامعة ليتم التعامل معها وتحسين البيئة الجامعية.
+      </p>
+
+      <div class="quick-tags">
+        <span data-ar="موقف سيارات" data-en="Parking">موقف سيارات</span>
+        <span data-ar="طريق" data-en="Path">طريق</span>
+        <span data-ar="حديقة" data-en="Garden">حديقة</span>
+        <span data-ar="سكن جامعي" data-en="Dormitory">سكن جامعي</span>
+      </div>
+    </div>
+
+    <form class="smart-form" id="reportForm">
+      <label data-ar="نوع المشكلة" data-en="Issue type">نوع المشكلة</label>
+      <select required>
+        <option>عطل إنارة</option>
+        <option>نظافة</option>
+        <option>تكييف</option>
+        <option>ازدحام</option>
+        <option>تلف أثاث</option>
+      </select>
+
+      <label data-ar="الموقع" data-en="Location">الموقع</label>
+      <input type="text" placeholder="مثال: كلية الحاسب" required />
+
+      <label data-ar="وصف المشكلة" data-en="Issue description">وصف المشكلة</label>
+      <textarea placeholder="اكتب وصف البلاغ..." required></textarea>
+
+      <label data-ar="رفع صورة" data-en="Upload image">رفع صورة</label>
+      <input type="file" />
+
+      <button type="submit" class="primary" data-ar="إرسال البلاغ" data-en="Submit Report">إرسال البلاغ</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<div id="toast" class="toast hidden">تم الإرسال بنجاح</div>
+
+<script src="script.js"></script>
+</body>
+</html>

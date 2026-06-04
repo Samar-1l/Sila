@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صلة | الخريطة</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="map.css" />
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <div class="logo-box">
+      <img src="logo.png" alt="شعار صلة">
+    </div>
+
+    <div class="brand-text">
+      <h3 data-ar="صلة" data-en="Sila">صلة</h3>
+      <span data-ar="البوابة الذكية لجامعة الإمام" data-en="Smart Imam University Portal">
+        البوابة الذكية لجامعة الإمام
+      </span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <button onclick="location.href='index.html'" class="nav-btn" data-ar="الرئيسية" data-en="Home">الرئيسية</button>
+    <button class="nav-btn active" data-ar="الخريطة" data-en="Map">الخريطة</button>
+    <button onclick="location.href='index.html#suggestions'" class="nav-btn" data-ar="الاقتراحات" data-en="Suggestions">الاقتراحات</button>
+    <button onclick="location.href='index.html#reports'" class="nav-btn" data-ar="البلاغات" data-en="Reports">البلاغات</button>
+    <button onclick="location.href='dashboard.html'" class="nav-btn" data-ar="لوحة المؤشرات" data-en="Dashboard">لوحة المؤشرات</button>
+
+  </nav>
+
+  <button class="lang-btn" onclick="toggleLang()">🌐 العربية | English</button>
+</header>
+
+<main>
+  <section class="page active">
+    <div class="page-head">
+      <span class="badge">خريطة تفاعلية </span>
+      <h1>الخريطة التفاعلية</h1>
+     
+    </div>
+
+    <div class="map-section">
+
+      <aside class="side-panel" id="mapInfoPanel">
+        <div class="panel-box">
+          <h2>معلومات المبنى</h2>
+          <p>اضغطي على أي مبنى في الخريطة لعرض التفاصيل والخدمات هنا.</p>
+        </div>
+
+        <div class="panel-box">
+          <h2>الفعاليات واللقاءات</h2>
+
+          <div class="event-table">
+            <div class="event-row">
+              <strong>لقاء نادي البرمجة</strong>
+              <span>مبنى 324 · الثلاثاء · 11:00 ص</span>
+            </div>
+
+            <div class="event-row">
+              <strong>ورشة الذكاء الاصطناعي</strong>
+              <span>مبنى 324 · الأربعاء · 1:00 م</span>
+            </div>
+
+            <div class="event-row">
+              <strong>اليوم التعريفي</strong>
+              <span>مبنى 321 · الأحد · 10:00 ص</span>
+            </div>
+
+            <div class="event-row">
+              <strong>لقاء إعلامي</strong>
+              <span>مبنى 325 · الاثنين · 12:30 م</span>
+            </div>
+
+            <div class="event-row">
+              <strong>جلسة إرشاد أكاديمي</strong>
+              <span>المبنى الرئيسي · الخميس · 9:30 ص</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="campus-map svg-map-wrapper">
+
+        <svg class="drawn-map" viewBox="0 0 1400 620" xmlns="http://www.w3.org/2000/svg">
+
+          <rect x="0" y="0" width="1400" height="620" rx="34" class="map-bg"/>
+
+          <!-- المواقف -->
+          <g class="parking-area" data-name="مواقف" onclick="showSimpleName('مواقف')">
+            <rect x="70" y="65" width="150" height="490" rx="18"/>
+            <rect x="1180" y="65" width="150" height="490" rx="18"/>
+
+            <g class="parking-lines">
+              <line x1="95" y1="100" x2="195" y2="100"/>
+              <line x1="95" y1="135" x2="195" y2="135"/>
+              <line x1="95" y1="170" x2="195" y2="170"/>
+              <line x1="95" y1="205" x2="195" y2="205"/>
+              <line x1="95" y1="240" x2="195" y2="240"/>
+              <line x1="95" y1="275" x2="195" y2="275"/>
+              <line x1="95" y1="310" x2="195" y2="310"/>
+              <line x1="95" y1="345" x2="195" y2="345"/>
+              <line x1="95" y1="380" x2="195" y2="380"/>
+              <line x1="95" y1="415" x2="195" y2="415"/>
+              <line x1="95" y1="450" x2="195" y2="450"/>
+
+              <line x1="1205" y1="100" x2="1305" y2="100"/>
+              <line x1="1205" y1="135" x2="1305" y2="135"/>
+              <line x1="1205" y1="170" x2="1305" y2="170"/>
+              <line x1="1205" y1="205" x2="1305" y2="205"/>
+              <line x1="1205" y1="240" x2="1305" y2="240"/>
+              <line x1="1205" y1="275" x2="1305" y2="275"/>
+              <line x1="1205" y1="310" x2="1305" y2="310"/>
+              <line x1="1205" y1="345" x2="1305" y2="345"/>
+              <line x1="1205" y1="380" x2="1305" y2="380"/>
+              <line x1="1205" y1="415" x2="1305" y2="415"/>
+              <line x1="1205" y1="450" x2="1305" y2="450"/>
+            </g>
+          </g>
+
+          <!-- الساحات -->
+          <path class="campus-floor" d="M210 95 H525 Q555 95 555 125 V190 H610 V430 H555 V500 Q555 535 520 535 H210 Q175 535 175 500 V125 Q175 95 210 95 Z"/>
+          <path class="campus-floor" d="M875 95 H1190 Q1225 95 1225 125 V500 Q1225 535 1190 535 H880 Q845 535 845 500 V430 H790 V190 H845 V125 Q845 95 875 95 Z"/>
+          <path class="campus-floor" d="M555 210 H845 V430 H555 Z"/>
+<!-- المبنى الرئيسي -->
+<g class="svg-building main-building" data-name="المبنى الرئيسي" onclick="selectMapBuilding('main')">
+  <rect x="600" y="95" width="200" height="360" rx="10"/>
+  <text class="main-map-label" x="700" y="285">الرئيسي</text>
+</g>
+
+<!-- مبنى 323 -->
+<g class="svg-building" data-name="مبنى 323 - كلية الشريعة والعلوم" onclick="selectMapBuilding('b323')">
+  <path d="M255 125 H500 V210 H255 Z"/>
+  <text class="map-building-label" x="378" y="176">323</text>
+</g>
+
+<!-- مبنى 321 -->
+<g class="svg-building" data-name="مبنى 321 - مبنى التحضيري" onclick="selectMapBuilding('b321')">
+  <path d="M900 125 H1145 V210 H900 Z"/>
+  <text class="map-building-label" x="1022" y="176">321</text>
+</g>
+
+<!-- مبنى 324 -->
+<g class="svg-building" data-name="مبنى 324 - كلية الحاسب وأصول الدين" onclick="selectMapBuilding('b324')">
+  <path d="M255 410 H510 V500 H255 Z"/>
+  <text class="map-building-label" x="383" y="464">324</text>
+</g>
+
+<!-- مبنى 322 -->
+<g class="svg-building" data-name="مبنى 322 - كلية الاقتصاد واللغة العربية" onclick="selectMapBuilding('b322')">
+  <path d="M890 410 H1145 V500 H890 Z"/>
+  <text class="map-building-label" x="1018" y="464">322</text>
+</g>
+
+<!-- مبنى 326 -->
+<g class="svg-building" data-name="مبنى 326 - كلية الطب واللغات والترجمة" onclick="selectMapBuilding('b326')">
+  <path d="M105 175 H210 V470 H105 Z"/>
+  <text class="map-building-label" x="158" y="333">326</text>
+</g>
+
+<!-- مبنى 325 -->
+<g class="svg-building" data-name="مبنى 325 - كلية الإعلام والعلوم الاجتماعية" onclick="selectMapBuilding('b325')">
+  <path d="M1190 175 H1295 V470 H1190 Z"/>
+  <text class="map-building-label" x="1242" y="333">325</text>
+</g>
+          <!-- خدمات الجهة اليسار: صفين 3 و 3 -->
+          <g class="food-area" data-name="مقهى فووم" onclick="showSimpleName('مقهى فووم')">
+            <rect x="300" y="255" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="مقهى أراي" onclick="showSimpleName('مقهى أراي')">
+            <rect x="360" y="255" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="نظارات العجلان" onclick="showSimpleName('نظارات العجلان')">
+            <rect x="420" y="255" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="بقالة" onclick="showSimpleName('بقالة')">
+            <rect x="300" y="315" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="مطعم منتفشه" onclick="showSimpleName('مطعم منتفشه')">
+            <rect x="360" y="315" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="مقهى ارتيستا" onclick="showSimpleName('مقهى ارتيستا')">
+            <rect x="420" y="315" width="42" height="42" rx="6"/>
+          </g>
+
+          <!-- خدمات الجهة اليمين: صفين 4 و 4 -->
+          <g class="food-area" data-name="مطعم عجينة بوشيه" onclick="showSimpleName('مطعم عجينة بوشيه')">
+            <rect x="860" y="255" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="صالون" onclick="showSimpleName('صالون')">
+            <rect x="920" y="255" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="بقالة" onclick="showSimpleName('بقالة')">
+            <rect x="980" y="255" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="مكتبة ادلاس" onclick="showSimpleName('مكتبة ادلاس')">
+            <rect x="1040" y="255" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="بلاك ستامب" onclick="showSimpleName('بلاك ستامب')">
+            <rect x="860" y="315" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="مقهى برسِك" onclick="showSimpleName('مقهى برسِك')">
+            <rect x="920" y="315" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="فلوتيد" onclick="showSimpleName('فلوتيد')">
+            <rect x="980" y="315" width="42" height="42" rx="6"/>
+          </g>
+
+          <g class="food-area" data-name="مطعم مصقع وسلطة" onclick="showSimpleName('مطعم مصقع وسلطة')">
+            <rect x="1040" y="315" width="42" height="42" rx="6"/>
+          </g>
+
+        </svg>
+
+        <div id="mapTooltip" class="map-tooltip"></div>
+        <div id="serviceMarker" class="service-marker hidden">📍</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast hidden">تم الإرسال بنجاح</div>
+
+<script src="script.js"></script>
+<script src="map.js"></script>
+</body>
+</html>

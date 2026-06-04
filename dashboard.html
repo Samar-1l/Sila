@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>صلة | لوحة المؤشرات</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="brand">
+    <div class="logo-box">
+      <img src="logo.png" alt="شعار صلة">
+    </div>
+
+    <div class="brand-text">
+      <h3 data-ar="صلة" data-en="Sila">صلة</h3>
+      <span data-ar="البوابة الذكية لجامعة الإمام" data-en="Smart Imam University Portal">
+        البوابة الذكية لجامعة الإمام
+      </span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <button onclick="location.href='index.html'" class="nav-btn">الرئيسية</button>
+    <button onclick="location.href='map.html'" class="nav-btn">الخريطة</button>
+    <button onclick="location.href='index.html#suggestions'" class="nav-btn">الاقتراحات</button>
+    <button onclick="location.href='index.html#reports'" class="nav-btn">البلاغات</button>
+    <button class="nav-btn active">لوحة المؤشرات</button>
+  </nav>
+
+  <button class="lang-btn" onclick="toggleLang()">🌐 العربية | English</button>
+</header>
+
+<main class="dashboard-page">
+
+  <section class="dashboard-hero">
+    <div>
+      <span class="badge">لوحة المؤشرات الذكية</span>
+      <h1>قرارات أسرع بناءً على بيانات الحرم الجامعي</h1>
+      <p>
+        لوحة مخصصة للإدارات تعرض البلاغات، الاقتراحات، أكثر المواقع تفاعلًا،
+        والخدمات الأكثر استخدامًا مع توصيات ذكية قابلة للتنفيذ.
+      </p>
+    </div>
+
+    <div class="dashboard-status">
+      <span class="pulse"></span>
+      <strong>تحديث مباشر</strong>
+      <p>آخر تحديث: اليوم · 10:45 ص</p>
+    </div>
+  </section>
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <span>📊</span>
+      <p>إجمالي البلاغات</p>
+      <h2>128</h2>
+      <small>+18 هذا الأسبوع</small>
+    </div>
+
+    <div class="stat-card">
+      <span>📈</span>
+      <p>معدل إغلاق البلاغات</p>
+      <h2>82%</h2>
+      <small>تحسن 12% عن الشهر الماضي</small>
+    </div>
+
+    <div class="stat-card">
+      <span>💡</span>
+      <p>عدد الاقتراحات</p>
+      <h2>64</h2>
+      <small>23 اقتراحًا قابلًا للتنفيذ</small>
+    </div>
+
+    <div class="stat-card">
+      <span>⭐</span>
+      <p>أكثر الخدمات استخدامًا</p>
+      <h2>المطاعم</h2>
+      <small>1,240 عملية بحث</small>
+    </div>
+  </section>
+
+  <section class="dashboard-layout">
+
+    <div class="dashboard-card large">
+      <div class="card-head">
+        <div>
+          <h2>الخريطة الحرارية للبلاغات</h2>
+          <p>أحمر = بلاغات مرتفعة، أصفر = متوسطة، أخضر = مستقرة</p>
+        </div>
+      </div>
+
+      <div class="heatmap">
+        <svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+
+          <rect x="0" y="0" width="1200" height="520" rx="30" class="heat-bg"/>
+
+          <path class="heat-floor" d="M170 80 H455 Q485 80 485 110 V170 H535 V360 H485 V430 Q485 460 455 460 H170 Q140 460 140 430 V110 Q140 80 170 80 Z"/>
+          <path class="heat-floor" d="M745 80 H1030 Q1060 80 1060 110 V430 Q1060 460 1030 460 H745 Q715 460 715 430 V360 H665 V170 H715 V110 Q715 80 745 80 Z"/>
+          <path class="heat-floor" d="M485 185 H715 V360 H485 Z"/>
+
+          <g class="heat-building medium" data-name="مبنى 323">
+            <path d="M210 120 H420 V190 H210 Z"/>
+            <text x="315" y="165">323</text>
+          </g>
+
+          <g class="heat-building high" data-name="مبنى 321">
+            <path d="M780 120 H990 V190 H780 Z"/>
+            <text x="885" y="165">321</text>
+          </g>
+
+          <g class="heat-building low" data-name="مبنى 324">
+            <path d="M220 350 H430 V430 H220 Z"/>
+            <text x="325" y="398">324</text>
+          </g>
+
+          <g class="heat-building medium" data-name="مبنى 322">
+            <path d="M770 350 H980 V430 H770 Z"/>
+            <text x="875" y="398">322</text>
+          </g>
+
+          <g class="heat-building high" data-name="مبنى 325">
+            <path d="M1030 160 H1110 V400 H1030 Z"/>
+            <text x="1070" y="285">325</text>
+          </g>
+
+          <g class="heat-building low" data-name="مبنى 326">
+            <path d="M90 160 H170 V400 H90 Z"/>
+            <text x="130" y="285">326</text>
+          </g>
+
+          <g class="heat-building main">
+            <rect x="515" y="105" width="170" height="310" rx="10"/>
+            <text x="600" y="270">الرئيسي</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="heat-legend">
+        <span><i class="red"></i> مرتفع</span>
+        <span><i class="yellow"></i> متوسط</span>
+        <span><i class="green"></i> مستقر</span>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <h2>أكثر المواقع التي وردت عنها ملاحظات</h2>
+
+      <div class="ranking-list">
+        <div><strong>مبنى 321</strong><span>34 بلاغ</span></div>
+        <div><strong>مبنى 325</strong><span>28 بلاغ</span></div>
+        <div><strong>المواقف الشرقية</strong><span>21 بلاغ</span></div>
+        <div><strong>مبنى 323</strong><span>17 بلاغ</span></div>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <h2>أكثر المشكلات تكرارًا</h2>
+
+      <div class="bar-list">
+        <div>
+          <span>نقص اللوحات الإرشادية</span>
+          <b style="width: 86%"></b>
+        </div>
+        <div>
+          <span>ازدحام المواقف</span>
+          <b style="width: 74%"></b>
+        </div>
+        <div>
+          <span>صيانة دورات المياه</span>
+          <b style="width: 58%"></b>
+        </div>
+        <div>
+          <span>ضعف التكييف</span>
+          <b style="width: 42%"></b>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <h2>أوقات الذروة داخل الحرم</h2>
+
+      <div class="peak-box">
+        <h3>11:00 ص - 1:00 م</h3>
+        <p>أعلى كثافة حركة في مباني 321 و325 والمواقف الشرقية.</p>
+      </div>
+
+      <div class="peak-box soft">
+        <h3>8:00 ص - 9:00 ص</h3>
+        <p>ازدحام ملحوظ عند المداخل والمواقف.</p>
+      </div>
+    </div>
+
+    <div class="dashboard-card">
+      <h2>أكثر الفعاليات إقبالًا</h2>
+
+      <div class="event-mini">
+        <strong>ورشة الذكاء الاصطناعي</strong>
+        <span>142 حضور</span>
+      </div>
+
+      <div class="event-mini">
+        <strong>لقاء نادي البرمجة</strong>
+        <span>96 حضور</span>
+      </div>
+
+      <div class="event-mini">
+        <strong>اليوم التعريفي</strong>
+        <span>88 حضور</span>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="recommendations">
+    <div class="rec-title">
+      <span>🤖</span>
+      <div>
+        <h2>توصيات ذكية للإدارة</h2>
+        <p>اقتراحات مبنية على تحليل البلاغات والاقتراحات وسلوك الاستخدام.</p>
+      </div>
+    </div>
+
+    <div class="rec-grid">
+      <div class="rec-card high-priority">
+        <strong>أولوية عالية</strong>
+        <p>
+          تم تسجيل 34 بلاغًا حول نقص اللوحات الإرشادية بالقرب من مبنى 321 خلال آخر شهر،
+          ويوصى بإضافة لوحات إرشادية عند المدخلين الشرقي والجنوبي.
+        </p>
+      </div>
+
+      <div class="rec-card">
+        <strong>تحسين خدمة</strong>
+        <p>
+          أكثر الخدمات بحثًا هذا الأسبوع هي المطاعم والكافيهات، ويوصى بإضافة فلتر واضح
+          للخدمات الغذائية داخل الخريطة.
+        </p>
+      </div>
+
+      <div class="rec-card">
+        <strong>تحليل فعالية</strong>
+        <p>
+          انخفض حضور إحدى الفعاليات بنسبة 40% مقارنة بالشهر الماضي، ويوصى بتحسين الإعلان
+          المبكر وربط الفعالية بمواقع المباني ذات الحركة الأعلى.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
