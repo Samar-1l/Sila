@@ -31,7 +31,10 @@
     <button onclick="location.href='dashboard.html'" class="nav-btn" data-ar="لوحة المؤشرات" data-en="Dashboard">لوحة المؤشرات</button>
   </nav>
 
-  <button class="lang-btn" onclick="toggleLang()">🌐 العربية | English</button>
+  <div class="header-actions">
+    <button class="lang-btn" onclick="toggleLang()">🌐 العربية | English</button>
+    <button class="profile-btn" onclick="toggleProfilePanel()">👤</button>
+  </div>
 </header>
 
 <main>
@@ -57,34 +60,88 @@
       </div>
     </div>
 
-<div class="hero-map-card" onclick="location.href='map.html'">
-  <div class="home-map-preview">
+    <div class="hero-map-card" onclick="location.href='map.html'">
+      <div class="home-map-preview">
+        <div class="home-zone left-zone"></div>
+        <div class="home-zone right-zone"></div>
 
-    
+        <div class="home-main-building">الرئيسي</div>
 
-    <div class="home-zone left-zone"></div>
-    <div class="home-zone right-zone"></div>
+        <div class="home-building hb-323">323</div>
+        <div class="home-building hb-324">324</div>
+        <div class="home-building hb-326">326</div>
 
-    <div class="home-main-building">الرئيسي</div>
+        <div class="home-building hb-321">321</div>
+        <div class="home-building hb-322">322</div>
+        <div class="home-building hb-325">325</div>
 
-    <div class="home-building hb-323">323</div>
-    <div class="home-building hb-324">324</div>
-    <div class="home-building hb-326">326</div>
-
-    <div class="home-building hb-321">321</div>
-    <div class="home-building hb-322">322</div>
-    <div class="home-building hb-325">325</div>
-
-    <div class="home-link line-1"></div>
-    <div class="home-link line-2"></div>
-
+        <div class="home-link line-1"></div>
+        <div class="home-link line-2"></div>
+      </div>
+    </div>
   </div>
 
-  <p data-ar="اضغط على الخريطة لاستكشاف المرافق والخدمات"
-     data-en="Click the map to explore facilities and services">
-    اضغط على الخريطة لاستكشاف المرافق والخدمات
-  </p>
-</div>
+  <div class="personal-section">
+
+    <div class="personal-card events-card">
+      <div class="section-title-row">
+        <div>
+          <span class="mini-badge">مقترح لك</span>
+          <h2>فعاليات ولقاءات مناسبة لتخصصك</h2>
+          <p>بناءً على تخصصك: الشريعة</p>
+        </div>
+        <span class="card-icon">✨</span>
+      </div>
+
+      <div class="recommended-events">
+        <div class="recommended-event">
+          <div>
+            <h3>لقاء مهارات البحث الفقهي</h3>
+            <p>مبنى 323 · الثلاثاء · 11:00 ص</p>
+          </div>
+          <span>شهادة حضور</span>
+        </div>
+
+        <div class="recommended-event">
+          <div>
+            <h3>ورشة الذكاء الاصطناعي في الدراسات الشرعية</h3>
+            <p>مبنى 323 · الأربعاء · 1:00 م</p>
+          </div>
+          <span>ساعتان تطوعية</span>
+        </div>
+
+        <div class="recommended-event">
+          <div>
+            <h3>جلسة الإرشاد الأكاديمي لطالبات الشريعة</h3>
+            <p>المبنى الرئيسي · الخميس · 9:30 ص</p>
+          </div>
+          <span>أولوية تسجيل</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="personal-card services-card">
+      <div class="section-title-row">
+        <div>
+          <span class="mini-badge">خدمات كليتك</span>
+          <h2>نبذة عن الخدمات الموجودة في كلية الشريعة</h2>
+          <p>وصول أسرع للخدمات الأكثر احتياجًا داخل مبنى 323.</p>
+        </div>
+        <span class="card-icon">🏛️</span>
+      </div>
+
+      <div class="college-services">
+        <div>مقهى مون</div>
+        <div>مطعم انتي آنز</div>
+        <div>مصرف الراجحي</div>
+        <div>آلة بيع منتجات صيدلية</div>
+      </div>
+
+      <button class="secondary service-link-btn" onclick="location.href='map.html'">
+        عرض موقع الكلية على الخريطة
+      </button>
+    </div>
+
   </div>
 </section>
 
@@ -157,6 +214,69 @@
 </section>
 
 </main>
+
+<aside id="profilePanel" class="profile-panel">
+  <div class="profile-header">
+    <button class="profile-close" onclick="toggleProfilePanel()">×</button>
+    <div class="profile-avatar">س</div>
+    <h2>ملفي في صلة</h2>
+    <p>طالب · كلية الشريعة · مبنى 323</p>
+  </div>
+
+  <div class="profile-box">
+    <h3>معلومات المستخدم</h3>
+    <div class="profile-info-row">
+      <span>الرقم الجامعي</span>
+      <strong id="profileUniversityId">441234567</strong>
+    </div>
+    <div class="profile-info-row">
+      <span>التخصص</span>
+      <strong>الشريعة</strong>
+    </div>
+    <div class="profile-info-row">
+      <span>المبنى المرتبط</span>
+      <strong>مبنى 323</strong>
+    </div>
+  </div>
+
+  <div class="profile-box">
+    <h3>تتبع البلاغات والاقتراحات</h3>
+
+    <div class="tracking-item">
+      <div>
+        <strong>بلاغ: ضعف الإرشاد للمبنى</strong>
+        <p>قيد المعالجة · منذ يومين</p>
+      </div>
+      <span class="status processing">قيد المعالجة</span>
+    </div>
+
+    <div class="tracking-item">
+      <div>
+        <strong>اقتراح: إضافة لوحات إرشادية</strong>
+        <p>تمت المراجعة · هذا الأسبوع</p>
+      </div>
+      <span class="status done">تمت المراجعة</span>
+    </div>
+
+    <div class="tracking-item">
+      <div>
+        <strong>بلاغ: ازدحام عند المدخل</strong>
+        <p>تم الإغلاق · الأسبوع الماضي</p>
+      </div>
+      <span class="status closed">مغلق</span>
+    </div>
+  </div>
+
+  <button class="primary profile-action" onclick="showPage('reports'); toggleProfilePanel();">
+    تقديم بلاغ جديد
+  </button>
+
+  <button class="secondary profile-action" onclick="showPage('suggestions'); toggleProfilePanel();">
+    إضافة اقتراسح
+  </button>
+</aside>
+
+<div id="profileOverlay" class="profile-overlay" onclick="toggleProfilePanel()"></div>
 
 <div id="toast" class="toast hidden">تم الإرسال بنجاح</div>
 
