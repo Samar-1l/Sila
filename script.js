@@ -27,7 +27,10 @@ function showPage(pageId) {
   document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
   document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
 
-  document.getElementById(pageId).classList.add("active");
+  const targetPage = document.getElementById(pageId);
+  if (!targetPage) return;
+
+  targetPage.classList.add("active");
 
   const pages = ["home", "map", "suggestions", "reports"];
   const index = pages.indexOf(pageId);
@@ -69,12 +72,33 @@ function setupForms() {
   }
 }
 
+function toggleProfilePanel() {
+  const panel = document.getElementById("profilePanel");
+  const overlay = document.getElementById("profileOverlay");
+
+  if (!panel || !overlay) return;
+
+  panel.classList.toggle("open");
+  overlay.classList.toggle("open");
+}
+
+function loadUserProfile() {
+  const user =
+    JSON.parse(localStorage.getItem("silaUser")) ||
+    JSON.parse(sessionStorage.getItem("silaUser"));
+
+  const profileUniversityId = document.getElementById("profileUniversityId");
+
+  if (user && user.universityId && profileUniversityId) {
+    profileUniversityId.textContent = user.universityId;
+  }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   applyLang();
   setupForms();
+  loadUserProfile();
 
   if (location.hash === "#suggestions") showPage("suggestions");
   if (location.hash === "#reports") showPage("reports");
 });
-
-
