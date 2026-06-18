@@ -45,6 +45,14 @@
      
     </div>
 
+    <div class="map-filter-bar">
+  <button class="filter-btn" data-category="cafes" onclick="showCategory('cafes')">☕ مقاهي</button>
+  <button class="filter-btn" data-category="restaurants" onclick="showCategory('restaurants')">🍽️ مطاعم</button>
+  <button class="filter-btn" data-category="bank" onclick="showCategory('bank')">🏧 مصرف</button>
+  <button class="filter-btn" data-category="printing" onclick="showCategory('printing')">🖨️ طباعة</button>
+  <button class="filter-btn" data-category="library" onclick="showCategory('library')">📚 مكتبة</button>
+</div>
+
     <div class="map-section">
 
       <aside class="side-panel" id="mapInfoPanel">
@@ -127,47 +135,47 @@
           <path class="campus-floor" d="M210 95 H525 Q555 95 555 125 V190 H610 V430 H555 V500 Q555 535 520 535 H210 Q175 535 175 500 V125 Q175 95 210 95 Z"/>
           <path class="campus-floor" d="M875 95 H1190 Q1225 95 1225 125 V500 Q1225 535 1190 535 H880 Q845 535 845 500 V430 H790 V190 H845 V125 Q845 95 875 95 Z"/>
           <path class="campus-floor" d="M555 210 H845 V430 H555 Z"/>
-<!-- المبنى الرئيسي -->
-<g class="svg-building main-building" data-name="المبنى الرئيسي" onclick="selectMapBuilding('main')">
-  <rect x="600" y="95" width="200" height="360" rx="10"/>
-  <text class="main-map-label" x="700" y="285">الرئيسي</text>
-</g>
+          <!-- المبنى الرئيسي -->
+          <g class="svg-building main-building" data-name="المبنى الرئيسي" onclick="selectMapBuilding('main')">
+            <rect x="600" y="95" width="200" height="360" rx="10"/>
+            <text class="main-map-label" x="700" y="285">الرئيسي</text>
+          </g>
 
-<!-- مبنى 323 -->
-<g class="svg-building" data-name="مبنى 323 - كلية الشريعة والعلوم" onclick="selectMapBuilding('b323')">
-  <path d="M255 125 H500 V210 H255 Z"/>
-  <text class="map-building-label" x="378" y="176">323</text>
-</g>
+          <!-- مبنى 323 -->
+          <g class="svg-building" data-name="مبنى 323 - كلية الشريعة والعلوم" onclick="selectMapBuilding('b323')">
+            <path d="M255 125 H500 V210 H255 Z"/>
+            <text class="map-building-label" x="378" y="176">323</text>
+          </g>
 
-<!-- مبنى 321 -->
-<g class="svg-building" data-name="مبنى 321 - مبنى التحضيري" onclick="selectMapBuilding('b321')">
-  <path d="M900 125 H1145 V210 H900 Z"/>
-  <text class="map-building-label" x="1022" y="176">321</text>
-</g>
+          <!-- مبنى 321 -->
+          <g class="svg-building" data-name="مبنى 321 - مبنى التحضيري" onclick="selectMapBuilding('b321')">
+            <path d="M900 125 H1145 V210 H900 Z"/>
+            <text class="map-building-label" x="1022" y="176">321</text>
+          </g>
 
-<!-- مبنى 324 -->
-<g class="svg-building" data-name="مبنى 324 - كلية الحاسب وأصول الدين" onclick="selectMapBuilding('b324')">
-  <path d="M255 410 H510 V500 H255 Z"/>
-  <text class="map-building-label" x="383" y="464">324</text>
-</g>
+          <!-- مبنى 324 -->
+          <g class="svg-building" data-name="مبنى 324 - كلية الحاسب وأصول الدين" onclick="selectMapBuilding('b324')">
+            <path d="M255 410 H510 V500 H255 Z"/>
+            <text class="map-building-label" x="383" y="464">324</text>
+          </g>
 
-<!-- مبنى 322 -->
-<g class="svg-building" data-name="مبنى 322 - كلية الاقتصاد واللغة العربية" onclick="selectMapBuilding('b322')">
-  <path d="M890 410 H1145 V500 H890 Z"/>
-  <text class="map-building-label" x="1018" y="464">322</text>
-</g>
+          <!-- مبنى 322 -->
+          <g class="svg-building" data-name="مبنى 322 - كلية الاقتصاد واللغة العربية" onclick="selectMapBuilding('b322')">
+            <path d="M890 410 H1145 V500 H890 Z"/>
+            <text class="map-building-label" x="1018" y="464">322</text>
+          </g>
 
-<!-- مبنى 326 -->
-<g class="svg-building" data-name="مبنى 326 - كلية الطب واللغات والترجمة" onclick="selectMapBuilding('b326')">
-  <path d="M105 175 H210 V470 H105 Z"/>
-  <text class="map-building-label" x="158" y="333">326</text>
-</g>
+          <!-- مبنى 326 -->
+          <g class="svg-building" data-name="مبنى 326 - كلية الطب واللغات والترجمة" onclick="selectMapBuilding('b326')">
+            <path d="M105 175 H210 V470 H105 Z"/>
+            <text class="map-building-label" x="158" y="333">326</text>
+          </g>
 
-<!-- مبنى 325 -->
-<g class="svg-building" data-name="مبنى 325 - كلية الإعلام والعلوم الاجتماعية" onclick="selectMapBuilding('b325')">
-  <path d="M1190 175 H1295 V470 H1190 Z"/>
-  <text class="map-building-label" x="1242" y="333">325</text>
-</g>
+          <!-- مبنى 325 -->
+          <g class="svg-building" data-name="مبنى 325 - كلية الإعلام والعلوم الاجتماعية" onclick="selectMapBuilding('b325')">
+            <path d="M1190 175 H1295 V470 H1190 Z"/>
+            <text class="map-building-label" x="1242" y="333">325</text>
+          </g>
           <!-- خدمات الجهة اليسار: صفين 3 و 3 -->
           <g class="food-area" data-name="مقهى فووم" onclick="showSimpleName('مقهى فووم')">
             <rect x="300" y="255" width="42" height="42" rx="6"/>
@@ -206,7 +214,7 @@
             <rect x="980" y="255" width="42" height="42" rx="6"/>
           </g>
 
-          <g class="food-area" data-name="مكتبة ادلاس" onclick="showSimpleName('مكتبة ادلاس')">
+          <g class="food-area" data-name="مكتبة ادلاس" onclick="showPlaceDetails('atlas')">
             <rect x="1040" y="255" width="42" height="42" rx="6"/>
           </g>
 
