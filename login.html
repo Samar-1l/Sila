@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تسجيل الدخول | صلة</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+    :root {
+      --brown: #5B3B2E;
+      --brown-2: #8B6046;
+      --sky: #D1E9FE;
+      --sky-2: #BAD8F2;
+      --cream: #fff8ef;
+      --text: #211815;
+      --muted: #62544f;
+      --shadow: 0 24px 70px rgba(56, 74, 92, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Tajawal", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.95), transparent 26%),
+        radial-gradient(circle at 85% 12%, rgba(255,255,255,0.85), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #f9fcff 28%, var(--sky) 100%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .login-shell {
+      width: min(460px, 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .intro-card,
+    .login-card {
+      width: 100%;
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .intro-card {
+      padding: 38px;
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 44px;
+    }
+
+    .logo-box {
+      width: 72px;
+      height: 72px;
+      min-width: 72px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-box img {
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand h1 {
+      color: var(--brown);
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .intro-card h2 {
+      color: var(--brown);
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+
+    .intro-card p {
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.9;
+      max-width: 620px;
+    }
+
+    .mini-map {
+      height: 240px;
+      border-radius: 32px;
+      margin-top: 34px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.42) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.42) 1px, transparent 1px),
+        linear-gradient(135deg, #fffaf2, #D1E9FE);
+      background-size: 44px 44px, 44px 44px, cover;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .map-block {
+      position: absolute;
+      border-radius: 14px;
+      background: #BAD8F2;
+      border: 2px solid rgba(91,59,46,0.35);
+      display: grid;
+      place-items: center;
+      color: var(--brown);
+      font-weight: 900;
+    }
+
+    .m-main {
+      background: var(--brown);
+      color: white;
+      width: 18%;
+      height: 58%;
+      right: 41%;
+      top: 21%;
+    }
+
+    .m1 { width: 22%; height: 18%; right: 14%; top: 22%; }
+    .m2 { width: 22%; height: 18%; right: 14%; bottom: 18%; }
+    .m3 { width: 22%; height: 18%; left: 14%; top: 22%; }
+    .m4 { width: 22%; height: 18%; left: 14%; bottom: 18%; }
+
+    .login-card {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-card h2 {
+      color: var(--brown);
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .login-card > p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 26px;
+    }
+
+    .user-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .type-card {
+      border: 1px solid rgba(91,59,46,0.12);
+      background: rgba(255,255,255,0.75);
+      color: var(--brown);
+      border-radius: 18px;
+      padding: 13px 8px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .type-card.active {
+      background: var(--brown);
+      color: white;
+      box-shadow: 0 12px 28px rgba(91,59,46,0.22);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--brown);
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      border: 1px solid rgba(91,59,46,0.14);
+      background: rgba(255,255,255,0.9);
+      border-radius: 18px;
+      padding: 15px 16px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.25s;
+    }
+
+    .form-group input:focus {
+      border-color: var(--brown-2);
+      box-shadow: 0 0 0 4px rgba(91,59,46,0.10);
+    }
+
+    .helper-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 12px 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .helper-row label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 999px;
+      padding: 15px 22px;
+      background: linear-gradient(135deg, var(--brown), var(--brown-2));
+      color: white;
+      font-weight: 900;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0 18px 36px rgba(91,59,46,0.25);
+      transition: 0.25s;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .error-msg {
+      display: none;
+      margin-top: 14px;
+      background: rgba(240,107,95,0.12);
+      color: #9b2d25;
+      border: 1px solid rgba(240,107,95,0.25);
+      padding: 12px 14px;
+      border-radius: 16px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .demo-note {
+      margin-top: 18px;
+      background: rgba(209,233,254,0.45);
+      color: #315b78;
+      padding: 14px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .login-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-card {
+        min-height: auto;
+      }
+
+      .user-types {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="login-shell">
+
+  <section class="login-card">
+    <h2>تسجيل الدخول</h2>
+    <p>أدخل الرقم الجامعي وكلمة المرور للمتابعة.</p>
+
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="universityId">الرقم الجامعي</label>
+        <input 
+          id="universityId" 
+          type="text" 
+          autocomplete="username"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">كلمة المرور</label>
+        <input 
+          id="password" 
+          type="password" 
+          autocomplete="current-password"
+          required
+        >
+      </div>
+
+      <div class="helper-row">
+        <label>
+          <input id="rememberMe" type="checkbox">
+          تذكرني
+        </label>
+
+        
+      </div>
+
+      <button class="login-btn" type="submit">دخول إلى صلة</button>
+
+      <div id="errorMsg" class="error-msg">
+        تأكدي من إدخال الرقم وكلمة المرور.
+      </div>
+    </form>
+
+  </section>
+
+</div>
+
+<script>
+  let selectedRole = "student";
+
+  const roleButtons = document.querySelectorAll(".type-card");
+  const loginForm = document.getElementById("loginForm");
+  const errorMsg = document.getElementById("errorMsg");
+
+  roleButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      roleButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+      selectedRole = button.dataset.role;
+    });
+  });
+
+  loginForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const universityId = document.getElementById("universityId").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const rememberMe = document.getElementById("rememberMe").checked;
+
+    if (universityId.length < 5 || password.length < 4) {
+      errorMsg.style.display = "block";
+      errorMsg.textContent = "الرقم الجامعي أو كلمة المرور غير صحيحة.";
+      return;
+    }
+
+    const userSession = {
+      isLoggedIn: true,
+      universityId: universityId,
+      role: selectedRole,
+      loginTime: new Date().toISOString()
+    };
+
+    if (rememberMe) {
+      localStorage.setItem("silaUser", JSON.stringify(userSession));
+    } else {
+      sessionStorage.setItem("silaUser", JSON.stringify(userSession));
+    }
+
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
